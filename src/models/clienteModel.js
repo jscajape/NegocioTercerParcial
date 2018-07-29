@@ -2,10 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const Cliente = new Schema({
-    codigo:{
-        type:Number,
-        required: 'Es necesario el codigo'
-    },
+
     identificacion: {
         type: String,
         required:'Es necesario el numero del documento',
@@ -15,17 +12,15 @@ const Cliente = new Schema({
         type: String,
         required:'Es necesario el nombre'
     },
-    apellidos: {
-        type: String,
-        required:'Es necesario los apellidos'
+    fecha_nacimiento: { 
+        type: Date,
+        required:'Es necesario la fecha'
     },
-    direccion: String,
-    telefono: String,
-    movil: String,
-    correo: {
-        type: String,
-        match: /.+\@.+\..+/
-    }
+    estatura: {
+        type: Number,
+    required:'Es necesario el nombre'
+        }
+ 
     
 });
 

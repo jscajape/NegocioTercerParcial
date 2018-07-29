@@ -14,7 +14,6 @@ router.get('/:identificacion', async (req, res) =>{
         if(err) return res.status(500).send({ message: 'error al realizar la peticion'})
         if(!cliente) return res.status(404).send({ mesagge :' el cliente no exiten'})
         
-
         res.json(cliente)
     })
 });
@@ -29,7 +28,7 @@ router.put('/', async (req, res) => {
              num = clientes[clientes.length-1].codigo
     }
     const cliente = new Cliente(req.body);
-    cliente.codigo=num+1
+  
 
     await cliente.save();
     res.json({
